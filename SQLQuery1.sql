@@ -1,0 +1,1 @@
+﻿Select * from TareasGenericas where CodAsig='SEG' and Codigo not in(Select CodTarea from EstudiantesTareas where Email='pepe@ikasle.ehu.es')
