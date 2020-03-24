@@ -1,11 +1,15 @@
-Imports System.Data.SqlClient
 
+Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Xml
 
 Public Class SQLDataAccess
+
     Private Shared conexion As New SqlConnection
     Private Shared comando As New SqlCommand
     Private Shared adaptador As New SqlDataAdapter
     Private Shared dstMbrs As New DataSet
+    Private Shared tblMbrs As New DataTable
 
 
     Public Function Conectar() As String
@@ -113,6 +117,17 @@ Public Class SQLDataAccess
         Return tblMbrs
     End Function
 
+    Public Function GetTareasProfeMAL(ByVal asig As String) As DataTable
+        Dim dapMbrs As New SqlDataAdapter()
+        dapMbrs = New SqlDataAdapter("Select Distinct TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.CodAsig, TareasGenericas.HEstimadas, TareasGenericas.Explotacion, TareasGenericas.TipoTarea FROM TareasGenericas INNER JOIN GruposClase On TareasGenericas.CodAsig = GruposClase.codigoasig INNER JOIN ProfesoresGrupo On GruposClase.codigo = ProfesoresGrupo.codigogrupo WHERE (TareasGenericas.CodAsig ='" & asig & "')
+", conexion)
+        Dim bldMbrs As New SqlCommandBuilder(dapMbrs)
+        dapMbrs.Fill(dstMbrs, "ProfesoresTarea")
+        tblMbrs = dstMbrs.Tables("ProfesoresTarea")
+        Return tblMbrs
+    End Function
+
+
     Public Function InstanciarTarea(ByVal email As String, ByVal tarea As String, ByVal estimadas As Integer, ByVal reales As Integer) As Boolean
 
         Dim st As String
@@ -149,7 +164,7 @@ Public Class SQLDataAccess
     Public Function InsertarTarea(ByVal codigo As String, ByVal descripcion As String, ByVal CodAsig As String, ByVal horas As Integer, ByVal tipo As String) As Boolean
         adaptador = New SqlDataAdapter("Select * From TareasGenericas", conexion)
         adaptador.Fill(dstMbrs, "TareasGen")
-        'Dim dtbl As DataTable = dstMbrs.Tables("TareasGen")
+
         Dim row As DataRow = dstMbrs.Tables("TareasGen").NewRow()
         row("Codigo") = codigo
         row("Descripcion") = descripcion
@@ -172,6 +187,79 @@ Public Class SQLDataAccess
         Return True
     End Function
 
+    Public Function ImportarXML(ByVal asig As String, ByVal docxml As XmlDocument) As Boolean
+        adaptador = New SqlDataAdapter("Select * From TareasGenericas", conexion)
+        adaptador.Fill(dstMbrs, "TareasGenricas")
+        Dim tbl As DataTable
+        Dim row As DataRow
+        tbl = dstMbrs.Tables("TareasGenricas")
+
+        Dim doc As XmlNode = docxml.DocumentElement
+        Dim nodeList As XmlNodeList
+        nodeList = doc.SelectNodes("//tarea")
 
 
+        For Each node As XmlNode In nodeList
+            row = tbl.NewRow()
+            row("CodAsig") = asig
+
+            row("Codigo") = node.Attributes("codigo").InnerText
+
+            row("Descripcion") = node.ChildNodes.Item(0).InnerText
+
+            row("HEstimadas") = node.ChildNodes.Item(1).InnerText
+
+            row("Explotacion") = node.ChildNodes.Item(2).InnerText
+
+            row("TipoTarea") = node.ChildNodes.Item(3).InnerText
+            Try
+                tbl.Rows.Add(row)
+            Catch e As ArgumentException
+                Return False
+            End Try
+        Next node
+
+
+        Dim s As New SqlCommandBuilder(adaptador)
+        adaptador.InsertCommand = s.GetInsertCommand()
+        Try
+            adaptador.Update(dstMbrs, "TareasGenricas")
+            dstMbrs.AcceptChanges()
+            Return True
+        Catch ex As SqlException
+            Return False
+        End Try
+    End Function
+
+    Public Function ExportarXML(ByVal asig As String) As String
+        Dim dapMbrs As New SqlDataAdapter()
+        Dim tblMbrs As New DataTable
+        dapMbrs = New SqlDataAdapter("Select * From TareasGenericas where CodAsig='" & asig & "'", conexion)
+        dapMbrs.Fill(dstMbrs, "exportar")
+        Return dstMbrs.GetXml
+
+    End Function
+
+
+    Public Function GetTareasProfe(ByVal asig As String) As SqlDataAdapter
+        Conectar()
+        Dim st = "SELECT distinct Codigo, Descripcion, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig = '" & asig & "'"
+        Dim adapter As New SqlDataAdapter(st, conexion)
+        Return adapter
+    End Function
+
+    Public Function GetFirstAsig(ByVal email As String) As String
+        Conectar()
+        Dim st = "SELECT GruposClase.codigoasig FROM ProfesoresGrupo INNER JOIN GruposClase ON ProfesoresGrupo.codigogrupo = GruposClase.codigo WHERE (ProfesoresGrupo.email = '" & email & "')"
+        comando = New SqlCommand(st, conexion)
+
+        Dim reader As SqlDataReader
+        reader = comando.ExecuteReader()
+        reader.Read()
+        Dim result As String
+        result = reader.GetString(0)
+        reader.Close()
+        Return result
+
+    End Function
 End Class

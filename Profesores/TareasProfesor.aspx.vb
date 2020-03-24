@@ -5,11 +5,6 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Page.IsPostBack Then
             dstMbrs = Session("datos")
-        Else
-            ln.Conectar()
-            If (Session("email") = "") Then
-                Session("email") = Request("email")
-            End If
         End If
     End Sub
 
@@ -27,7 +22,7 @@
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Session.RemoveAll()
-        Response.Redirect("http://localhost:56315/Inicio.aspx")
+        Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
 
     End Sub
 End Class

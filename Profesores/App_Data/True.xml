@@ -1,0 +1,99 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Asignaturas">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Codigo" type="xs:string" minOccurs="0" />
+                <xs:element name="Descripcion" type="xs:string" minOccurs="0" />
+                <xs:element name="HEstimadas" type="xs:int" minOccurs="0" />
+                <xs:element name="Explotacion" type="xs:boolean" minOccurs="0" />
+                <xs:element name="TipoTarea" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Asignaturas>
+    <Codigo>HAS20G10-Lab4</Codigo>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G10-Test1</Codigo>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G14-Lab4</Codigo>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G15-Lab4</Codigo>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G15-Test1</Codigo>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G16-Lab4                                     </Codigo>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G16-Test1                                    </Codigo>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G17-Lab4</Codigo>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G17-Test1</Codigo>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G19-Lab4</Codigo>
+    <Descripcion>Laboratorio sobre XML</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Laboratorio</TipoTarea>
+  </Asignaturas>
+  <Asignaturas>
+    <Codigo>HAS20G19-Test1</Codigo>
+    <Descripcion>Test 1 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Examen</TipoTarea>
+  </Asignaturas>
+</NewDataSet>

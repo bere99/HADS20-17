@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Profesor
+Partial Public Class Exportadora
     
     '''<summary>
     '''Control form1.
@@ -23,40 +23,49 @@ Partial Public Class Profesor
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Control asignaturas.
+    '''Control DropDownList1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents asignaturas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control tareas.
+    '''Control SqlDataSource1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tareas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control Grupos.
+    '''Control GridView1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Grupos As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
-    '''Control importar.
+    '''Control ver.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents importar As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents ver As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control atras.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents atras As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
     '''Control exportar.
@@ -65,14 +74,14 @@ Partial Public Class Profesor
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents exportar As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents exportar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control cerrar.
+    '''Control Label1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cerrar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 End Class

@@ -92,6 +92,13 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HAS.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SEG.xml" />
+    <Content Include="App_Data\XSLTFile.xsl" />
+    <Content Include="Exportadora.aspx" />
+    <Content Include="Importadora.aspx" />
     <Content Include="Profesor.aspx" />
     <Content Include="TareasProfesor.aspx" />
     <Content Include="Web.config">
@@ -100,6 +107,20 @@
     <Content Include="InsertarTareas.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exportadora.aspx.designer.vb">
+      <DependentUpon>Exportadora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exportadora.aspx.vb">
+      <DependentUpon>Exportadora.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Importadora.aspx.designer.vb">
+      <DependentUpon>Importadora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Importadora.aspx.vb">
+      <DependentUpon>Importadora.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -150,10 +171,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\tareas.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\hads1920-G17 - FTP.pubxml" />
+    <None Include="My Project\PublishProfiles\hads1920-G17 - ReadOnly - FTP.pubxml" />
+    <None Include="My Project\PublishProfiles\hads1920-G17 - Web Deploy.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

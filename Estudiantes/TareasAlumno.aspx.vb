@@ -25,6 +25,8 @@ Public Class TareasAlumno
     End Sub
 
     Protected Sub DropDownList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList.SelectedIndexChanged
+        GridView.DataSource = Nothing
+        GridView.DataBind()
         Session("asig") = DropDownList.SelectedValue
         GridView.DataSource = ln.GetTareasPRUEBA(Session("email"), Session("asig"))
         GridView.DataBind()
@@ -39,6 +41,6 @@ Public Class TareasAlumno
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Session.RemoveAll()
-        Response.Redirect("http://localhost:56315/Inicio.aspx")
+        Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
     End Sub
 End Class

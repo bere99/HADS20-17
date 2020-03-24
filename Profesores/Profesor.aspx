@@ -12,10 +12,16 @@
         <div style="height: 418px">
             <asp:HyperLink ID="asignaturas" runat="server">Asignaturas</asp:HyperLink>
             <br />
-            <asp:HyperLink ID="tareas" runat="server">Tareas</asp:HyperLink>
+            <asp:HyperLink ID="tareas" runat="server" NavigateUrl="~/TareasProfesor.aspx">Tareas</asp:HyperLink>
             <br />
             <asp:HyperLink ID="Grupos" runat="server">Grupos</asp:HyperLink>
             <br />
+            <asp:HyperLink ID="importar" runat="server" NavigateUrl="~/Importadora.aspx">Importar v. XMLDocument</asp:HyperLink>
+            <br />
+            <asp:HyperLink ID="exportar" runat="server" NavigateUrl="~/Exportadora.aspx">Exportar</asp:HyperLink>
+            <br />
+            <br />
+            <asp:Button ID="cerrar" runat="server" Text="Cerrar Sesión" />
         </div>
     </form>
 </body>

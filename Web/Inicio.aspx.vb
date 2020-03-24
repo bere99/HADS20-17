@@ -1,5 +1,4 @@
-﻿
-Public Class Inicio
+﻿Public Class Inicio
     Inherits System.Web.UI.Page
     Dim ln As New LibreriasLAB.LogicaDeNegocio
 
@@ -17,10 +16,12 @@ Public Class Inicio
             tipo = ln.EsProfe(email.Text)
             If tipo Then
                 Session("tipo") = "Profesor"
-                Response.Redirect("http://localhost:54384/TareasProfesor.aspx?email=" & email.Text & "")
+                Response.Redirect("http://localhost:54384/Profesor.aspx?email=" & email.Text & "")
+                '"http://hads1920-g17.azurewebsites.net/Profesor.aspx?email=" & email.Text & ""
             Else
                 Session("tipo") = "Alumno"
                 Response.Redirect("http://localhost:56523/TareasAlumno.aspx?email=" & email.Text & "")
+                'http://hads1920-g17.azurewebsites.net/TareasAlumno.aspx
             End If
         Else
             conection.Text = "Login incorrecto"

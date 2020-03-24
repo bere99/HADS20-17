@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Profesor
+Partial Public Class Importadora
     
     '''<summary>
     '''Control form1.
@@ -23,31 +23,31 @@ Partial Public Class Profesor
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Control asignaturas.
+    '''Control DropDownList.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents asignaturas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents DropDownList As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control tareas.
+    '''Control SqlDataSource1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tareas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control Grupos.
+    '''Control Xml.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Grupos As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents Xml As Global.System.Web.UI.WebControls.Xml
     
     '''<summary>
     '''Control importar.
@@ -56,23 +56,23 @@ Partial Public Class Profesor
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents importar As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents importar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control exportar.
+    '''Control menu.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents exportar As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents menu As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''Control cerrar.
+    '''Control ibi.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cerrar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ibi As Global.System.Web.UI.WebControls.Label
 End Class

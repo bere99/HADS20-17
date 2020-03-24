@@ -1,4 +1,7 @@
-﻿Public Class LogicaDeNegocio
+﻿Imports System.Data.SqlClient
+Imports System.Xml
+
+Public Class LogicaDeNegocio
     Dim da As New LibreriasLAB.SQLDataAccess
 
     Public Function Login(ByVal email As String, ByVal pass As String) As Boolean
@@ -112,4 +115,22 @@
     Public Function InsertarTarea(ByVal codigo As String, ByVal descripcion As String, ByVal CodAsig As String, ByVal horas As Integer, ByVal tipo As String) As Boolean
         Return da.InsertarTarea(codigo, descripcion, CodAsig, horas, tipo)
     End Function
+
+
+    Public Function ImportarXML(ByVal asig As String, ByVal docxml As XmlDocument) As Boolean
+        Return da.ImportarXML(asig, docxml)
+    End Function
+
+    Public Function ExportarXML(ByVal asig As String) As String
+        Return da.ExportarXML(asig)
+    End Function
+
+    Public Function GetTareasProfe(ByVal asig As String) As SqlDataAdapter
+        Return da.GetTareasProfe(asig)
+    End Function
+
+    Public Function GetFirstAsig(ByVal email As String) As String
+        Return da.GetFirstAsig(email)
+    End Function
+
 End Class
