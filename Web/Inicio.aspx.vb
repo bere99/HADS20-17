@@ -14,8 +14,11 @@
             Session("email") = email.Text
             Dim tipo As String
             tipo = ln.EsProfe(email.Text)
+            If Session("email") = "admin@ehu.es" Then
 
-            If tipo Then
+                FormsAuthentication.SetAuthCookie("admin", False)
+                Response.Redirect("http://localhost:56083/ManageUsers.aspx")
+            ElseIf tipo Then
                 Session("tipo") = "Profesor"
                 If Session("email") = "vadillo@ehu.es" Then
                     FormsAuthentication.SetAuthCookie("vadillo", False)
@@ -26,8 +29,8 @@
                 End If
 
                 Response.Redirect("http://localhost:54384/Profesor.aspx?email=" & email.Text & "")
-                Else
-                    Session("tipo") = "Alumno"
+            Else
+                Session("tipo") = "Alumno"
                     FormsAuthentication.SetAuthCookie("alumno", False)
                     FormsAuthentication.RedirectFromLoginPage("alumno", False)
 
