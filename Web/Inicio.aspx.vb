@@ -25,11 +25,11 @@
                     FormsAuthentication.SetAuthCookie("profesor", False)
                 End If
 
-                Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesores/Profesor.aspx?email=" & email.Text & "")
+                Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesores/Profesor.aspx")
             Else
                 Session("tipo") = "Alumno"
                 FormsAuthentication.SetAuthCookie("alumno", False)
-                Response.Redirect("http://hads1920-g17.azurewebsites.net/Alumnos/TareasAlumno.aspx?email=" & email.Text & "")
+                Response.Redirect("http://hads1920-g17.azurewebsites.net/Alumnos/TareasAlumno.aspx")
             End If
             Else
                 conection.Text = "Login incorrecto"
