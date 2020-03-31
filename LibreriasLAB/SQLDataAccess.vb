@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Xml
+Imports System.Security.Cryptography
 
 Public Class SQLDataAccess
 
@@ -10,7 +11,6 @@ Public Class SQLDataAccess
     Private Shared adaptador As New SqlDataAdapter
     Private Shared dstMbrs As New DataSet
     Private Shared tblMbrs As New DataTable
-
 
     Public Function Conectar() As String
         Try
@@ -262,4 +262,9 @@ Public Class SQLDataAccess
         Return result
 
     End Function
+
+
+
+
+
 End Class

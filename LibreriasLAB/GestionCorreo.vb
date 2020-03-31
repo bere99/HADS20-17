@@ -2,7 +2,7 @@
 
 Public Class GestionCorreo
     Sub SendEmail(ByVal destination As String, ByVal subject As String, ByVal body As String)
-        Dim passWord = "contraseña"
+        Dim passWord = "KUKITA_TE_AMA"
 
         Dim msg = New MailMessage()
         msg.To.Add(New MailAddress(destination, "HADS"))

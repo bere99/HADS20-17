@@ -1,0 +1,16 @@
+﻿IBIZON NETWORKHUBS:
+
+Cerrar sesión:
+
+Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
+Response.Redirect("http://localhost:56315/Inicio.aspx")
+
+Login:
+
+PROFES
+Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesor.aspx?email=" & email.Text & "")
+Response.Redirect("http://localhost:54384/Profesor.aspx?email=" & email.Text & "")
+
+ALUMNOS 
+Response.Redirect("http://hads1920-g17.azurewebsites.net/TareasAlumno.aspx?email=" & email.Text & "")
+Response.Redirect("http://localhost:56523/TareasAlumno.aspx?email=" & email.Text & "")

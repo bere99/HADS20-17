@@ -5,6 +5,7 @@ Public Class LogicaDeNegocio
     Dim da As New LibreriasLAB.SQLDataAccess
 
     Public Function Login(ByVal email As String, ByVal pass As String) As Boolean
+        pass = MD5EncryptPass(pass)
         Return da.Login(email, pass)
     End Function
 
@@ -16,6 +17,7 @@ Public Class LogicaDeNegocio
 
         Dim numconfir = CLng(Rnd() * 9000000) + 1000000
         Try
+            pass = MD5EncryptPass(pass)
             da.Registrar(email, nombre, apellidos, rol, pass, numconfir)
         Catch ex As Exception
             Return ex.Message
@@ -88,6 +90,7 @@ Public Class LogicaDeNegocio
 
 
     Public Function CambiarPass(ByVal email As String, ByVal pass As String) As Boolean
+        pass = MD5EncryptPass(pass)
         Return (da.CambiarPass(email, pass) And da.CambiarCodPass(email, 0))
     End Function
 
@@ -131,6 +134,27 @@ Public Class LogicaDeNegocio
 
     Public Function GetFirstAsig(ByVal email As String) As String
         Return da.GetFirstAsig(email)
+    End Function
+
+    Public Function MD5EncryptPass(ByVal pass As String) As String
+        Dim HashedPass As String
+        HashedPass = ""
+        Dim hash As New Security.Cryptography.MD5CryptoServiceProvider
+        Dim bytValue() As Byte
+
+        Dim i As Integer
+
+        bytValue = System.Text.Encoding.UTF8.GetBytes(pass)
+
+        bytValue = hash.ComputeHash(bytValue)
+        hash.Clear()
+
+        For i = 0 To bytValue.Length - 1
+            HashedPass &= bytValue(i).ToString("x").PadLeft(2, "0")
+        Next
+
+        Return HashedPass
+
     End Function
 
 End Class

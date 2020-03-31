@@ -21,8 +21,11 @@
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        System.Web.Security.FormsAuthentication.SignOut()
         Session.RemoveAll()
-        Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
+        Session.Abandon()
+        Response.Redirect("http://localhost:56315/Inicio.aspx")
 
     End Sub
 End Class

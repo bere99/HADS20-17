@@ -14,17 +14,28 @@
             Session("email") = email.Text
             Dim tipo As String
             tipo = ln.EsProfe(email.Text)
+
             If tipo Then
                 Session("tipo") = "Profesor"
+                If Session("email") = "vadillo@ehu.es" Then
+                    FormsAuthentication.SetAuthCookie("vadillo", False)
+
+                Else
+                    FormsAuthentication.SetAuthCookie("profesor", False)
+
+                End If
+
                 Response.Redirect("http://localhost:54384/Profesor.aspx?email=" & email.Text & "")
-                '"http://hads1920-g17.azurewebsites.net/Profesor.aspx?email=" & email.Text & ""
-            Else
-                Session("tipo") = "Alumno"
+                Else
+                    Session("tipo") = "Alumno"
+                    FormsAuthentication.SetAuthCookie("alumno", False)
+                    FormsAuthentication.RedirectFromLoginPage("alumno", False)
+
+
                 Response.Redirect("http://localhost:56523/TareasAlumno.aspx?email=" & email.Text & "")
-                'http://hads1920-g17.azurewebsites.net/TareasAlumno.aspx
-            End If
-        Else
-            conection.Text = "Login incorrecto"
+                End If
+            Else
+                conection.Text = "Login incorrecto"
         End If
 
     End Sub

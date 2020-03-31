@@ -92,19 +92,26 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BasuraEspacial.aspx" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="changePass.aspx" />
     <Content Include="confirmar.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="ModifyPass.aspx" />
-    <Content Include="NewFile1.txt" />
-    <Content Include="NewFile2.txt" />
     <Content Include="Register.aspx" />
+    <Content Include="TextFile1.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasuraEspacial.aspx.designer.vb">
+      <DependentUpon>BasuraEspacial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasuraEspacial.aspx.vb">
+      <DependentUpon>BasuraEspacial.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CambiarPassword.aspx.designer.vb">
       <DependentUpon>CambiarPassword.aspx</DependentUpon>
     </Compile>
