@@ -25,7 +25,7 @@
         System.Web.Security.FormsAuthentication.SignOut()
         Session.RemoveAll()
         Session.Abandon()
-        Response.Redirect("http://localhost:56315/Inicio.aspx")
+        Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
 
     End Sub
 End Class
