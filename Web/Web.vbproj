@@ -92,12 +92,20 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BasuraEspacial.aspx" />
+    <Content Include="Admin\ManageUsers.aspx" />
+    <Content Include="Alumnos\Alumnos.aspx" />
+    <Content Include="Alumnos\InstanciarTarea.aspx" />
+    <Content Include="Alumnos\TareasAlumno.aspx" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="changePass.aspx" />
     <Content Include="confirmar.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="ModifyPass.aspx" />
+    <Content Include="Profesores\Exportadora.aspx" />
+    <Content Include="Profesores\Importadora.aspx" />
+    <Content Include="Profesores\InsertarTareas.aspx" />
+    <Content Include="Profesores\Profesor.aspx" />
+    <Content Include="Profesores\TareasProfesor.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="TextFile1.txt" />
     <Content Include="Web.config">
@@ -105,12 +113,33 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasuraEspacial.aspx.designer.vb">
-      <DependentUpon>BasuraEspacial.aspx</DependentUpon>
+    <Compile Include="Admin\ManageUsers.aspx.designer.vb">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BasuraEspacial.aspx.vb">
-      <DependentUpon>BasuraEspacial.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+    <Compile Include="Admin\ManageUsers.aspx.vb">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos\Alumnos.aspx.designer.vb">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\Alumnos.aspx.vb">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos\InstanciarTarea.aspx.designer.vb">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\InstanciarTarea.aspx.vb">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos\TareasAlumno.aspx.designer.vb">
+      <DependentUpon>TareasAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\TareasAlumno.aspx.vb">
+      <DependentUpon>TareasAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CambiarPassword.aspx.designer.vb">
       <DependentUpon>CambiarPassword.aspx</DependentUpon>
@@ -166,6 +195,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Profesores\Exportadora.aspx.designer.vb">
+      <DependentUpon>Exportadora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\Exportadora.aspx.vb">
+      <DependentUpon>Exportadora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\Importadora.aspx.designer.vb">
+      <DependentUpon>Importadora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\Importadora.aspx.vb">
+      <DependentUpon>Importadora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\InsertarTareas.aspx.designer.vb">
+      <DependentUpon>InsertarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\InsertarTareas.aspx.vb">
+      <DependentUpon>InsertarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\Profesor.aspx.designer.vb">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\Profesor.aspx.vb">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\TareasProfesor.aspx.designer.vb">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\TareasProfesor.aspx.vb">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Register.aspx.designer.vb">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
@@ -207,19 +271,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Estudiantes\Alumnos.vbproj">
-      <Project>{5f289d59-59ef-4727-906a-f84df5d21ff5}</Project>
-      <Name>Alumnos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LibreriasLAB\LibreriasLAB.vbproj">
       <Project>{7de98099-412d-44cf-8e9e-6887409607f1}</Project>
       <Name>LibreriasLAB</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Profesores\Profesores.vbproj">
-      <Project>{94d80084-19f3-4f0a-9e4f-aae5be1eee63}</Project>
-      <Name>Profesores</Name>
-    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
