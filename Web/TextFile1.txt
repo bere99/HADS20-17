@@ -8,9 +8,13 @@ Response.Redirect("http://localhost:56315/Inicio.aspx")
 Login:
 
 PROFES
-Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesor.aspx?email=" & email.Text & "")
-Response.Redirect("http://localhost:54384/Profesor.aspx?email=" & email.Text & "")
+Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesores/Profesor.aspx")
+Response.Redirect("http://localhost:56315/Profesores/Profesor.aspx")
 
 ALUMNOS 
-Response.Redirect("http://hads1920-g17.azurewebsites.net/TareasAlumno.aspx?email=" & email.Text & "")
-Response.Redirect("http://localhost:56523/TareasAlumno.aspx?email=" & email.Text & "")
+Response.Redirect("http://hads1920-g17.azurewebsites.net/Alumnos/TareasAlumno.aspx")
+Response.Redirect("http://localhost:56315/Alumnos/TareasAlumno.aspx")
+
+ADMIN
+Response.Redirect("http://hads1920-g17.azurewebsites.net/Admin/ManageUsers.aspx")
+Response.Redirect("http://localhost:56315/Admin/ManageUsers.aspx")

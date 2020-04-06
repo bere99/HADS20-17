@@ -33,6 +33,8 @@
             <br />
             <br />
             <asp:Label ID="conection" runat="server"></asp:Label>
+            <br />
+            <br />
             </div>
     </form>
 </body>

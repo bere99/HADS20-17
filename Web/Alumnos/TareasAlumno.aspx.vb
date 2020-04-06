@@ -39,8 +39,20 @@ Public Class TareasAlumno
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         System.Web.Security.FormsAuthentication.SignOut()
+
+        UpdateLogsOut(Session("email"), Session("tipo"))
         Session.RemoveAll()
         Session.Abandon()
         Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
+    End Sub
+
+
+    Protected Sub UpdateLogsOut(ByVal email As String, ByVal tipo As String)
+        Application.Lock()
+        Dim lista As New List(Of String)
+        lista = Application.Contents(tipo)
+        lista.Remove(email)
+        Application.Contents(tipo) = New List(Of String)(lista)
+        Application.UnLock()
     End Sub
 End Class

@@ -20,12 +20,4 @@
         Response.Redirect("InsertarTareas.aspx")
     End Sub
 
-    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-        System.Web.Security.FormsAuthentication.SignOut()
-        Session.RemoveAll()
-        Session.Abandon()
-        Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
-
-    End Sub
 End Class

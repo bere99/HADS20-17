@@ -4,6 +4,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ln.Conectar()
+
     End Sub
 
 
@@ -17,24 +18,43 @@
             If Session("email") = "admin@ehu.es" Then
                 FormsAuthentication.SetAuthCookie("admin", False)
                 Response.Redirect("http://hads1920-g17.azurewebsites.net/Admin/ManageUsers.aspx")
-            ElseIf tipo Then
-                Session("tipo") = "Profesor"
-                If Session("email") = "vadillo@ehu.es" Then
-                    FormsAuthentication.SetAuthCookie("vadillo", False)
+            Else
+                If tipo Then
+                    Session("tipo") = "Profesor"
+                    If Session("email") = "vadillo@ehu.es" Then
+                        FormsAuthentication.SetAuthCookie("vadillo", False)
+                    Else
+                        FormsAuthentication.SetAuthCookie("profesor", False)
+                    End If
+                    UpdateLogs(Session("email"), "Profesor")
+                    Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesores/Profesor.aspx")
                 Else
-                    FormsAuthentication.SetAuthCookie("profesor", False)
+                    Session("tipo") = "Alumno"
+                    FormsAuthentication.SetAuthCookie("alumno", False)
+                    UpdateLogs(Session("email"), "Alumno")
+                    Response.Redirect("http://hads1920-g17.azurewebsites.net/Alumnos/TareasAlumno.aspx")
                 End If
 
-                Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesores/Profesor.aspx")
-            Else
-                Session("tipo") = "Alumno"
-                FormsAuthentication.SetAuthCookie("alumno", False)
-                Response.Redirect("http://hads1920-g17.azurewebsites.net/Alumnos/TareasAlumno.aspx")
             End If
-            Else
-                conection.Text = "Login incorrecto"
+
+        Else
+            conection.Text = "Login incorrecto"
         End If
 
     End Sub
+
+    Protected Sub UpdateLogs(ByVal email As String, ByVal tipo As String)
+        Application.Lock()
+        Dim lista As New List(Of String)
+        If Not IsNothing(Application.Contents(tipo)) Then
+            lista = Application.Contents(tipo)
+        End If
+        lista.Add(email)
+        Application.Contents(tipo) = New List(Of String)(lista)
+        Application.UnLock()
+
+    End Sub
+
+
 
 End Class
