@@ -28,7 +28,6 @@
             text-align: center;
         }
         #email {
-            width: 330px;
             text-align: center;
         }
         #nombre {
@@ -57,16 +56,20 @@
         }
     </style>
 </head>
-<body style="width: 535px; height: 549px">
+<body style="width: 688px; height: 549px">
     <form id="form1" runat="server">
-        <div style="height: 540px; width: 524px">
+        <div style="height: 540px; width: 653px">
             <asp:Label ID="Label1" runat="server" Font-Names="Arial Black" Font-Size="X-Large" style="text-align: center" Text="Registro de usuarios"></asp:Label>
             <br />
-            <br />
-            Tu Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="email" runat="server" TextMode="Email" Width="311px"></asp:TextBox>
-            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="email" ErrorMessage="*" ForeColor="#CC0000" InitialValue=" "></asp:RequiredFieldValidator>
-            <br />
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>      
+                    Tu Email:&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="email" runat="server" AutoPostBack="true" Height="16px" TextMode="Email" Width="311px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="email" ErrorMessage="*" ForeColor="#CC0000" InitialValue=" "></asp:RequiredFieldValidator>
+                    &nbsp;<asp:Label ID="ibiText" runat="server"></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <br />
             Tu nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="nombre" runat="server" Width="312px"></asp:TextBox>
 &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="nombre" ErrorMessage="*" ForeColor="#CC0000"></asp:RequiredFieldValidator>

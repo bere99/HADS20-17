@@ -68,6 +68,15 @@ Partial Public Class Profesor
     Protected WithEvents exportar As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
+    '''Control importar0.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents importar0 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
     '''Control cerrar.
     '''</summary>
     '''<remarks>

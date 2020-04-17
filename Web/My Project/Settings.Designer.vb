@@ -53,6 +53,26 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php")>  _
+        Public ReadOnly Property Web_Matricula_Matriculas() As String
+            Get
+                Return CType(Me("Web_Matricula_Matriculas"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://hads1920-g17.azurewebsites.net/Service.asmx")>  _
+        Public ReadOnly Property Web_Dedication_Service() As String
+            Get
+                Return CType(Me("Web_Dedication_Service"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

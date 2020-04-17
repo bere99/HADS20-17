@@ -20,6 +20,8 @@
             <br />
             <asp:HyperLink ID="exportar" runat="server" NavigateUrl="~/Profesores/Exportadora.aspx">Exportar</asp:HyperLink>
             <br />
+            <asp:HyperLink ID="importar0" runat="server" NavigateUrl="~/Profesores/coordinador.aspx">Consultar medias</asp:HyperLink>
+            <br />
             <br />
             <asp:Button ID="cerrar" runat="server" Text="Cerrar Sesión" />
             <br />

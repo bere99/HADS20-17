@@ -33,7 +33,7 @@
         UpdateLogsOut(Session("email"), Session("tipo"))
         Session.RemoveAll()
         Session.Abandon()
-        Response.Redirect("http://localhost:56315/Inicio.aspx")
+        Response.Redirect("http://hads1920-g17.azurewebsites.net/Inicio.aspx")
 
     End Sub
 
@@ -45,4 +45,6 @@
         Application.Contents(tipo) = New List(Of String)(lista)
         Application.UnLock()
     End Sub
+
+
 End Class
