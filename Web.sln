@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Web", "Web\Web.vbproj", "{83B91FF4-F7EB-477A-86ED-353FF4213A47}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899} = {4AC27B4E-FE48-45E6-949B-4D0E1298E899}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LibreriasLAB", "LibreriasLAB\LibreriasLAB.vbproj", "{7DE98099-412D-44CF-8E9E-6887409607F1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ServicioWeb", "ServicioWeb\ServicioWeb.vbproj", "{4AC27B4E-FE48-45E6-949B-4D0E1298E899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +66,26 @@ Global
 		{7DE98099-412D-44CF-8E9E-6887409607F1}.Release|x64.Build.0 = Release|Any CPU
 		{7DE98099-412D-44CF-8E9E-6887409607F1}.Release|x86.ActiveCfg = Release|Any CPU
 		{7DE98099-412D-44CF-8E9E-6887409607F1}.Release|x86.Build.0 = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|ARM.Build.0 = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|x64.Build.0 = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Debug|x86.Build.0 = Debug|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|ARM.Build.0 = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|ARM64.Build.0 = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|x64.ActiveCfg = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|x64.Build.0 = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|x86.ActiveCfg = Release|Any CPU
+		{4AC27B4E-FE48-45E6-949B-4D0E1298E899}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

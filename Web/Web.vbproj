@@ -101,6 +101,13 @@
     <Content Include="CambiarPassword.aspx" />
     <Content Include="changePass.aspx" />
     <Content Include="confirmar.aspx" />
+    <None Include="Connected Services\ServiceReference1\Dedicaciones.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Inicio.aspx" />
     <Content Include="ModifyPass.aspx" />
     <Content Include="Profesores\Coordinador.aspx" />
@@ -110,11 +117,14 @@
     <Content Include="Profesores\Profesor.aspx" />
     <Content Include="Profesores\TareasProfesor.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Service.asmx" />
     <Content Include="TextFile1.txt" />
     <Content Include="Web References\Dedication\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\Dedicaciones.wsdl" />
+    <Content Include="Connected Services\ServiceReference1\Web.ServiceReference1.getDedicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web References\Dedication\Service.disco" />
     <Content Include="Web.config">
@@ -170,6 +180,11 @@
     <Compile Include="confirmar.aspx.vb">
       <DependentUpon>confirmar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.designer.vb">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -252,10 +267,6 @@
     <Compile Include="Register.aspx.vb">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Service.asmx.vb">
-      <DependentUpon>Service.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Web References\Dedication\Reference.vb">
       <AutoGen>True</AutoGen>
@@ -341,6 +352,9 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Web_Dedication_Service</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

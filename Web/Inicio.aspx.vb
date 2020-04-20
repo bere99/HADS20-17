@@ -17,7 +17,7 @@
             tipo = ln.EsProfe(email.Text)
             If Session("email") = "admin@ehu.es" Then
                 FormsAuthentication.SetAuthCookie("admin", False)
-                Response.Redirect("http://hads1920-g17.azurewebsites.net/Admin/ManageUsers.aspx")
+                Response.Redirect("http://localhost:56315/Admin/ManageUsers.aspx")
             Else
                 If tipo Then
                     Session("tipo") = "Profesor"
@@ -27,12 +27,12 @@
                         FormsAuthentication.SetAuthCookie("profesor", False)
                     End If
                     UpdateLogs(Session("email"), "Profesor")
-                    Response.Redirect("http://hads1920-g17.azurewebsites.net/Profesores/Profesor.aspx")
+                    Response.Redirect("http://localhost:56315/Profesores/Profesor.aspx")
                 Else
                     Session("tipo") = "Alumno"
                     FormsAuthentication.SetAuthCookie("alumno", False)
                     UpdateLogs(Session("email"), "Alumno")
-                    Response.Redirect("http://hads1920-g17.azurewebsites.net/Alumnos/TareasAlumno.aspx")
+                    Response.Redirect("http://localhost:56315/Alumnos/TareasAlumno.aspx")
                 End If
 
             End If

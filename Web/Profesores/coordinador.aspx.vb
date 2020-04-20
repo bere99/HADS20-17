@@ -1,6 +1,7 @@
 ﻿Public Class coordinador
     Inherits System.Web.UI.Page
-    Private Shared dedication As New Dedication.Service
+    Private Shared dedication As New ServiceReference1.DedicacionesSoapClient
+
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

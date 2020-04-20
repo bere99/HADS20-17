@@ -16,6 +16,7 @@ Public Class Register
     End Sub
 
     Protected Sub Insertar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles registrar.Click
+        validEmail = (matricula.comprobar(email.Text) = "SI")
         If validEmail Then
             Dim ln As New LibreriasLAB.LogicaDeNegocio
             Label2.Text = ln.Registrar(email.Text, nombre.Text, apellidos.Text, rol.SelectedItem.Text, pass.Text)
@@ -29,13 +30,9 @@ Public Class Register
 
     Protected Sub email_TextChanged(sender As Object, e As EventArgs) Handles email.TextChanged
         If matricula.comprobar(email.Text) = "SI" Then
-            validEmail = True
-            registrar.Enabled = True
             ibiText.Text = "El email es válido"
             ibiText.ForeColor = Color.Green
         Else
-            validEmail = False
-            registrar.Enabled = False
             ibiText.Text = "El email no es válido"
             ibiText.ForeColor = Color.Red
         End If
